@@ -19,6 +19,7 @@ from contact import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('',admin.site.urls),
     path(r'accounts', views.AccountAPIView.as_view(), name='account-list'),
     path(r'contacts', views.ContactAPIView.as_view(), name='contact-list'),
     path(r'activities', views.ActivityAPIView.as_view(), name='activity-list'),

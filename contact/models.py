@@ -15,7 +15,7 @@ INDCHOICES = (
 )
 
 class Account(models.Model):
-    nom = models.CharField("Nom du Compte", "Name", max_length=64)
+    nom = models.CharField("Nom du Compte", "nom", max_length=64)
     email = models.EmailField(blank = True, null = True)
     telephone = models.CharField(max_length=20, blank = True, null = True)
     entreprise = models.CharField("Industry Type", max_length=255, choices=INDCHOICES, blank=True, null=True)
@@ -26,7 +26,7 @@ class Account(models.Model):
     isActive = models.BooleanField(default=False)
 
     def __str__(self):
-        return self.name
+        return self.nom
 
 class ContactSource(models.Model):
     status = models.CharField("Contact Source", max_length=20)
@@ -53,7 +53,7 @@ class Contact(models.Model):
     isActive = models.BooleanField(default=False)
 
     def __str__(self):
-        return self.first_name
+        return self.nom
 
 class ActivityStatus(models.Model):
     status = models.CharField("Activity Status", max_length=20)
